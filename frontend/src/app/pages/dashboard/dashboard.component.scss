@@ -1,0 +1,23 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 15%;
+}
+
+.add-user {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  right: 10px;
+  bottom: 10px;
+  top: -7px;
+}

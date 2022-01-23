@@ -1,0 +1,37 @@
+.form-container {
+  width: 100%;
+
+  .row {
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+
+    .col {
+      padding: 15px;
+
+      .full-width {
+        width: 400px;
+
+        @media (max-width: 767px) {
+          width: 250px;
+        }
+      }
+
+      .validation-errors {
+        max-width: 400px;
+        .error-message {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  .btn-group {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,106 @@
+<div class="form-container">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Enter First name</mat-label>
+          <input
+            [formControlName]="'firstName'"
+            matInput
+            placeholder="First name"
+          />
+        </mat-form-field>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validationMessages.firstName">
+            <div
+              class="error-message"
+              *ngIf="
+                f['firstName'].hasError(validation.type) &&
+                (f['firstName'].dirty || f['firstName'].touched)
+              "
+            >
+              <mat-icon style="color: red; font-size: 18px">info</mat-icon>
+              <span style="color: #ff0000">{{ validation.message }}</span>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Enter Last name</mat-label>
+          <input
+            [formControlName]="'lastName'"
+            matInput
+            placeholder="Last Name"
+          />
+        </mat-form-field>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validationMessages.lastName">
+            <div
+              class="error-message"
+              *ngIf="
+                f['lastName'].hasError(validation.type) &&
+                (f['lastName'].dirty || f['lastName'].touched)
+              "
+            >
+              <mat-icon style="color: red; font-size: 18px">info</mat-icon>
+              <span style="color: #ff0000">{{ validation.message }}</span>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Enter Email</mat-label>
+          <input [formControlName]="'email'" matInput placeholder="Email" />
+        </mat-form-field>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validationMessages.email">
+            <div
+              class="error-message"
+              *ngIf="
+                f['email'].hasError(validation.type) &&
+                (f['email'].dirty || f['email'].touched)
+              "
+            >
+              <mat-icon style="color: red; font-size: 18px">info</mat-icon>
+              <span style="color: #ff0000">{{ validation.message }}</span>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Enter Phone number</mat-label>
+          <input
+            [formControlName]="'phone'"
+            maxlength="12"
+            matInput
+            placeholder="Phone"
+          />
+        </mat-form-field>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validationMessages.phone">
+            <div
+              class="error-message"
+              *ngIf="
+                f['phone'].hasError(validation.type) &&
+                (f['phone'].dirty || f['phone'].touched)
+              "
+            >
+              <mat-icon style="color: red; font-size: 18px">info</mat-icon>
+              <span style="color: #ff0000">{{ validation.message }}</span>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <div class="btn-group">
+      <button [disabled]="userForm.invalid" mat-raised-button color="accent">
+        Edit User
+      </button>
+    </div>
+  </form>
+</div>
